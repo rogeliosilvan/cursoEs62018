@@ -76,28 +76,29 @@ function InvertirCadena(param1)
     return cadenaFin;
 }
 
+        
 
-let lenguajes = [
-    {
-        name:javascript: 
-        scrore:60
-    },
-    {
-        name:python: 
-        scrore:40
-    },
-    {
-        name: ruby: 
-        scrore:80
-    }];        
+function printLanguajes() {
 
-function printLanguajes(lenguajes) {
-
+    let languages = [
+        {
+          name: 'python',
+          score: 60
+        },
+        {
+          name: 'javascript',
+          score: 50
+        },
+        {
+          name: 'ruby',
+          score: 80
+        }
+      ]  
     
-    return lenguajes.filter( condicion => condicion.scrore >= 60).sort(anterior, siguiente) => {
-        if(anterior.score > siguiente.score) return false
-        return true
-    }) 
+    return languages.filter( condicion => condicion.score >= 60).sort((anterior, siguiente) => {
+        if(anterior.score > siguiente.score) return false;
+        return true;
+    }); 
 
 }    
 
@@ -113,3 +114,5 @@ buscarRaton("...C....m");
 buscarPalabra("barcelona praga barcelona ibiza madrid ibiza madrid");
 
 InvertirCadena("hola que tal estas esto zumbao");
+
+printLanguajes();
