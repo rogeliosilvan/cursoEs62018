@@ -207,6 +207,6 @@ function normalizeGroup(projects) {
 }
 
 //normalizeGroup(projects);
-normalizeGroupV2(projects2);
+normalizeGroupV2(projects);
 
 console.log(nombreProyectos)

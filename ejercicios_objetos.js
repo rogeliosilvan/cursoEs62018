@@ -11,7 +11,7 @@ function stringToObj() {
     {
         users.push({
             username: names[count],
-            contact: Number(contacts[count]);
+            contact: Number(contacts[count])
         })
     }
 
