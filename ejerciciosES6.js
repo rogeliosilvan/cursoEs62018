@@ -18,6 +18,10 @@ function sumarValue(inventory) {
 
 }
 
+// There are 4 people on the tooling team.
+// Their names are Jennie, Ronald, Martin, Anneli. 
+// 2 of them have a senior role.
+
 const teamName = "tooling"
 const people = [{ name: "Jennie", role: "senior" },
 { name: "Ronald", role: "junior" },
@@ -25,9 +29,6 @@ const people = [{ name: "Jennie", role: "senior" },
 { name: "Anneli", role: "junior" },
 { name: "roge", role: "senior" }]
 
-// There are 4 people on the tooling team.
-// Their names are Jennie, Ronald, Martin, Anneli. 
-// 2 of them have a senior role.
 
 const writeTemplateString = (teamName, people) => `There are ${people.length} people on the ${teamName} team.
 Their names are ${printPeopleMember(people)}
