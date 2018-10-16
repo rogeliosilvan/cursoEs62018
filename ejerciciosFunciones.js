@@ -7,36 +7,31 @@ let projects = [
                 groups: [
                     {
                         name: 'group1.1',
-                        groups: [
-                            {
-                                name: 'group1.1.1',
-                                groups: []
-                            }
-                        ]
+                        groups: []
                     },
                     {
                         name: 'group1.2',
                         groups: [
                             {
                                 name: 'group1.2.1',
-                                groups: [
-                                    {
-                                        name: 'group1.2.1.1',
-                                        groups: []
-                                    }
-                                ]
+                                groups: []
                             }
                         ]
-                    }                    
+                    }
                 ]
             }
         ]
     },
     {
         project: 'project 2',
-        groups: []
+        groups: [
+            {
+                name: 'group2',
+                groups: []
+            }
+        ]
     }
-]
+  ]
 
 let projects2 = [
     {
@@ -143,9 +138,10 @@ function nombreGrupo(grupos) {
             // una = una.concat(nombreGrupo(grupos[i].groups));
             una += nombreGrupo(grupos[i].groups);
             splitUna = una.split(',');
-            // console.log(una);
-            // console.log(splitUna);
-            nombreGrupo2 = nombreGrupo2.concat(splitUna);
+            console.log(una);
+            console.log(splitUna);
+            // nombreGrupo2 = nombreGrupo2.concat(splitUna);
+            nombreGrupo2 = [...nombreGrupo2, ...splitUna];
         }
 
     }
@@ -207,6 +203,6 @@ function normalizeGroup(projects) {
 }
 
 //normalizeGroup(projects);
-normalizeGroupV2(projects2);
+normalizeGroupV2(projects);
 
 console.log(nombreProyectos)
