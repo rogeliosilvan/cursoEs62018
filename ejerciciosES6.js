@@ -38,5 +38,57 @@ const printPeopleMember = () => people.map(member => member.name).join(', ');
 const printPeopleMemberSenior = () => people.filter(member => member.role.trim() === 'senior');
 
 
-sumarValue(inventory);
-console.log(writeTemplateString(teamName, people))
+// sumarValue(inventory);
+// console.log(writeTemplateString(teamName, people))
+
+
+
+let family = {
+    name: 'Sergio',
+    firstName: 'Zamarro',
+    age: 26,
+    dad: {
+        name: 'Agustin',
+        age: 50
+    },
+    mother: {
+        name: 'Yolanda',
+        age: 52 
+    }
+}
+
+const getFamily = () => family
+
+const retornaValoresFamily = () => {
+let { name: nombre,firstName: primerApPadre,age: edad, dad:{name: nombrePadre}, mother: { age: edadMadre } } = getFamily()
+
+return `${nombre},${primerApPadre},${edad},${nombrePadre},${edadMadre}`
+}
+
+// console.log(retornaValoresFamily());
+
+
+
+let numbers = [1, 2, 3, 1, 5, 5, 2, 7, 25, 32, 25, 69]
+
+const retornaValoresUnicos = (numbers) => {
+
+    let uniqueNumbers = new Set(numbers);
+    console.log(Array.from(uniqueNumbers));
+}
+
+retornaValoresUnicos(numbers);
+
+let fechaEs = new Intl.DateTimeFormat("es-ES")
+
+console.log(fechaEs.format(new Date()));
+
+let sim = Symbol();
+let obj = {
+    [sim]: 'hola',
+    publicProp: 2
+}
+
+// console.log(obj);
+console.log(obj[sim]);
+
