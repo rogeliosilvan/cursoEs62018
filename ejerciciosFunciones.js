@@ -121,40 +121,6 @@ function normalizeGroupV2(projects) {
             groups: nombreGrupo(projects[i].groups),
         })
 
-<<<<<<< HEAD
-        una = "";
-    }
-}
-
-var acumGrupo = "";
-var una =[];
-
-function nombreGrupo(grupos) {
-    var nombreGrupo2 = [];
-
-    for (let i = 0; i < grupos.length; i++) {
-        nombreGrupo2.push(grupos[i].name)
-        // console.log("name_____");
-        // console.log(grupos[i].name);
-        // console.log("grupo_____");
-        // console.log(grupos[i].groups.length);
-        if (grupos[i].groups.length)
-        {
-            //guardarlo en una variable y juntarlo en un arrya
-            console.log("Hay mas grupos. Vuelvo a llamar......");
-            una = una.concat(nombreGrupo(grupos[i].groups));
-            
-            
-        }
-
-        console.log("acumulo nombre");
-        console.log(una);
-        nombreGrupo2.push(una);
-            
-        
-        
-
-=======
         // una = "";
         // splitUna = [];
     }
@@ -184,7 +150,6 @@ function nombreGrupo(grupos) {
             nombreGrupo2 = [...nombreGrupo2, ...splitUna];
         }
 
->>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
     }
 
     return nombreGrupo2;
@@ -204,24 +169,6 @@ function nombreGrupo(grupos) {
 // }
 
 function extraerGrupos(grupos) {
-<<<<<<< HEAD
-
-    return grupos.map(function (group) {
-        console.log(group.groups.length);
-        console.log(group.name);
-        var tmpName = [];
-        // return group.name
-        if (!group.groups.length) {
-            console.log("devuelve grupo");
-            tmpName.push(group.name);
-            console.log(tmpName);
-            return group.name
-        }
-
-        extraerGrupos(group.groups);
-
-    })
-=======
     
 
     return grupos.map(function (group) {
@@ -247,7 +194,6 @@ function extraerGrupos(grupos) {
 
     })
 
->>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
 }
 
 function normalizeGroup(projects) {
@@ -262,11 +208,7 @@ function normalizeGroup(projects) {
     
 }
 
-<<<<<<< HEAD
-// normalizeGroup(projects);
-=======
 //normalizeGroup(projects);
->>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
 normalizeGroupV2(projects);
 
 console.log(nombreProyectos)
