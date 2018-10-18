@@ -27,6 +27,73 @@ let projects = [
         groups: [
             {
                 name: 'group2',
+<<<<<<< HEAD
+=======
+                groups: []
+            }
+        ]
+    }
+  ]
+
+let projects2 = [
+    {
+        project: 'project 1',
+        groups: [
+            {
+                name: 'group1',
+                groups: [
+                    {
+                        name: 'group1.1',
+                        groups: [
+                            {
+                                name: 'group1.1.1',
+                                groups: [
+                                    {
+                                        name: 'group1.1.1.1',
+                                        groups: []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: 'group1.2',
+                        groups: [
+                            {
+                                name: 'group1.2.1',
+                                groups: [
+                                    {
+                                        name: 'group1.2.1.1',
+                                        groups: []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: 'group1.3',
+                        groups: [
+                            {
+                                name: 'group1.3.1',
+                                groups: [
+                                    {
+                                        name: 'group1.3.1.1',
+                                        groups: []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        project: 'project 2',
+        groups: [
+            {
+                name: 'group2',
+>>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
                 groups: [
                     {
                         name: 'group2.1',
@@ -39,6 +106,11 @@ let projects = [
 ]
 
 var nombreProyectos = [];
+<<<<<<< HEAD
+=======
+// var una = "";
+// var splitUna = [];
+>>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
 
 function normalizeGroupV2(projects) {
     
@@ -49,6 +121,7 @@ function normalizeGroupV2(projects) {
             groups: nombreGrupo(projects[i].groups),
         })
 
+<<<<<<< HEAD
         una = "";
     }
 }
@@ -81,6 +154,37 @@ function nombreGrupo(grupos) {
         
         
 
+=======
+        // una = "";
+        // splitUna = [];
+    }
+}
+
+
+
+function nombreGrupo(grupos) {
+    var nombreGrupo2 = [];
+    
+
+    for (let i = 0; i < grupos.length; i++) {
+        nombreGrupo2.push(grupos[i].name)
+
+        if (grupos[i].groups.length)
+        {
+            var una = "";
+            var splitUna = [];
+            //guardarlo en una variable y juntarlo en un arrya
+            // console.log("Hay mas grupos. Vuelvo a llamar......");
+            // una = una.concat(nombreGrupo(grupos[i].groups));
+            una += nombreGrupo(grupos[i].groups);
+            splitUna = una.split(',');
+            console.log(una);
+            console.log(splitUna);
+            // nombreGrupo2 = nombreGrupo2.concat(splitUna);
+            nombreGrupo2 = [...nombreGrupo2, ...splitUna];
+        }
+
+>>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
     }
 
     return nombreGrupo2;
@@ -100,6 +204,7 @@ function nombreGrupo(grupos) {
 // }
 
 function extraerGrupos(grupos) {
+<<<<<<< HEAD
 
     return grupos.map(function (group) {
         console.log(group.groups.length);
@@ -116,6 +221,33 @@ function extraerGrupos(grupos) {
         extraerGrupos(group.groups);
 
     })
+=======
+    
+
+    return grupos.map(function (group) {
+
+        var nombreGrupo2 = [];
+        nombreGrupo2.push(group.name)
+        // return group.name
+        if (group.groups.length) {
+            console.log("devuelve grupo");
+
+            var una = "";
+            var splitUna = [];
+            una += extraerGrupos(group.groups);
+            splitUna = una.split(',');
+            console.log("una");
+            console.log(una);
+            console.log("splitUna");
+            console.log(splitUna);
+            return nombreGrupo2.concat(splitUna);
+        }
+
+        return nombreGrupo2;
+
+    })
+
+>>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
 }
 
 function normalizeGroup(projects) {
@@ -130,7 +262,11 @@ function normalizeGroup(projects) {
     
 }
 
+<<<<<<< HEAD
 // normalizeGroup(projects);
+=======
+//normalizeGroup(projects);
+>>>>>>> ba96621d98b07123b9374d59b75cd3188086f67f
 normalizeGroupV2(projects);
 
 console.log(nombreProyectos)
