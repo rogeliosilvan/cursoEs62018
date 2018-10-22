@@ -89,3 +89,47 @@ const descomponerEntero = numInt => {
 const disemvowel = s => `${s.replace(/[aeiou]/g,"").split(' ').join('')}`;
 //console.log(disemvowel("This website is for losers LOL!"));
 
+
+const duplicateEncode = word => {
+    var coincidencia = [];
+
+    Array.from(word).map(function (caracter) {   
+        Array.from(word).filter(carac => carac.toLowerCase() === caracter.toLowerCase()).length >=2 ? coincidencia.push( ")") : coincidencia.push( "(")
+    });
+
+    return coincidencia.join('');
+}
+
+function duplicateEncodev2(word) {
+    word = word.toLowerCase();
+    return word.replace(/./g, m => word.indexOf(m) == word.lastIndexOf(m) ? '(' : ')');
+  }
+
+
+  function duplicateEncodev3(word){
+    return word
+      .toLowerCase()
+      .split('')
+      .map( function (a, i, w) {
+        return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+      })
+      .join('');
+  }  
+
+
+// console.log(duplicateEncode("din"));
+// console.log(duplicateEncode("recede"));
+// console.log(duplicateEncode("Success"));
+// console.log(duplicateEncode("(( @"));
+
+
+// console.log(duplicateEncodev2("din"));
+// console.log(duplicateEncodev2("recede"));
+// console.log(duplicateEncodev2("Success"));
+// console.log(duplicateEncodev2("(( @"));
+
+
+console.log(duplicateEncodev3("din"));
+console.log(duplicateEncodev3("recede"));
+console.log(duplicateEncodev3("Success"));
+console.log(duplicateEncodev3("(( @"));
